@@ -1,0 +1,35 @@
+@import "../abstracts/extends";
+
+header {
+  width: 100%;
+  background-color: #020202;
+  height: 50px;
+
+  @media (max-width: 768px) {
+    height: 45px;
+  }
+  @media (max-width: 576px) {
+    height: 35px;
+  }
+}
+
+.logo-contenedor {
+  @extend %in-line;
+}
+.logo {
+  background-color: #ed1d23;
+  color: #fff;
+  font-family: $tipografia-logo, cursive;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0 10px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+  @media (max-width: 576px) {
+    font-size: 25px;
+  }
+}

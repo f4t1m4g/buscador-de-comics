@@ -1,0 +1,111 @@
+@import "../abstracts/extends";
+@import "../base/tipography";
+
+.card-comic-simple-contenedor {
+  @extend %is-stack !optional;
+  @extend %is-clickeable !optional;
+  width: calc(100% / 5 - 2 * 10px);
+  margin: 0 10px 30px;
+
+  &:hover {
+    .comic-img-contenedor {
+      @extend %move-up;
+    }
+    .comic-titulo {
+      color: #ed1d23;
+    }
+  }
+
+  .comic-img-contenedor {
+    display: flex;
+    box-shadow: 0 26px 24px -16px rgb(0 0 0 / 40%);
+    img {
+      width: 100%;
+    }
+  }
+
+  .comic-titulo-contenedor {
+    height: 64px;
+    margin-top: 25px;
+    font-family: $tipografia-principal;
+    .comic-titulo {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    width: calc(100% / 4 - 2 * 10px);
+  }
+  @media (max-width: 768px) {
+    width: calc(100% / 2 - 2 * 10px);
+  }
+  @media (max-width: 500px) {
+    width: 260px;
+  }
+}
+
+//TARJETA DETALLE
+
+.card-detalle-contenedor {
+  font-family: $tipografia-principal;
+}
+
+.card-comic-detalle-contenedor {
+  display: flex;
+  .comic-img-contenedor {
+    display: flex;
+    max-width: 370px;
+    min-width: 370px;
+    height: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+.comic-contenido-contenedor {
+  margin-left: 20px;
+
+  h1,
+  h3,
+  p {
+    margin: 20px;
+
+    @media (max-width: 750px) {
+      margin-left: 0;
+    }
+  }
+  @media (max-width: 750px) {
+    margin-left: 0;
+  }
+}
+
+.personajes-contenedor {
+  h3,
+  h4 {
+    margin: 20px 0px;
+  }
+  h4{
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #757575;
+  }
+}
+.personajes-cards-contenedor {
+  @extend %in-grid;
+}
+
+.personajes-cards-contenedor {
+  @extend %is-stack !optional;
+  article {
+    margin-right: 20px;
+    .comic-img-contenedor {
+      height: 330px;
+    }
+  }
+}
